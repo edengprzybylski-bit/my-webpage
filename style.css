@@ -1,62 +1,100 @@
+/* Define the dark blue color for consistency */
+:root {
+    --dark-blue: #19386A; /* A deep, navy-like blue */
+    --light-gray: #E0E0E0;
+}
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: hsl(253, 74%, 44%);
+    /* Set the main background to white, matching the image */
+    background-color: white; 
 }
 
 /* Banner */
 .banner {
-    background-color: #4CAF50;
-    color: rgb(96, 20, 20);
-    padding: 20px;
+    /* Use the dark blue color */
+    background-color: var(--dark-blue); 
+    color: white;
+    padding: 10px; /* Reduced padding slightly */
     text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-/* Layout Container */
+/* Layout Container: This handles the main content area below the banner */
 .container {
+    /* The image shows the content stretching edge-to-edge, 
+       so we use padding on the body or the internal elements instead of the container */
     display: flex;
-    padding: 20px;
-    gap: 20px;
+    /* Removed padding and gap from here to allow the white space to fill the view */
+    /* Adjust based on desired inner margins if needed */
+    padding: 20px 0; /* Add top/bottom padding for separation */
 }
 
-/* Left Sidebar */
-.left-sidebar {
-    flex: 1;
-    background-color: #871515;
-    padding: 20px;
-    border-radius: 10px;
+/* Info Column (Left side, where 'Your Name' etc. are) */
+.info-column {
+    /* Fixed width for the left info column */
+    width: 150px; 
+    padding-left: 20px; /* Indent the text from the edge */
+    padding-right: 10px;
+    font-size: 0.85em;
+    line-height: 0.5; /* Tighten up the line spacing */
+    color: black; /* Ensure text is black on white background */
+}
+.info-column p {
+    margin: 5px 0; /* Minimal margin for close grouping */
 }
 
-/* Main Content */
-main {
-    flex: 2;
-    background-color: rgb(89, 13, 151);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+/* Main Content Area (Center) */
+.main-content {
+    /* Takes up the remaining space between the info column and the right box */
+    flex-grow: 1; 
+    padding: 0 20px; /* Padding for main text */
+    /* Background is white, so no need for a background color here */
+}
+.main-content h2 {
+    margin-top: 0; /* Align with the top line of the info column */
 }
 
-/* Right Sidebar */
-.right-sidebar {
-    flex: 1;
-    background-color: #7c1540;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
+
+/* Right Placeholder Box */
+.right-placeholder {
+    /* Fixed width for the placeholder box */
+    width: 150px; 
+    /* Padding to separate the box from the main content */
+    padding: 0 20px; 
+    /* Style to match the gray box in the screenshot */
+    background-color: var(--light-gray); 
+    border: 1px solid var(--light-gray);
+    /* Make the box tall enough to be visible, adjust as needed */
+    height: 150px; 
 }
 
-.right-sidebar img {
-    max-width: 100%;
-    border-radius: 10px;
-}
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: rgb(4, 4, 4);
+    /* Use the dark blue color for the footer */
+    background-color: var(--dark-blue); 
+    color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 10px; /* Reduced padding to match banner */
+    /* Position the footer at the very bottom */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+/* Clear the bottom margin from the body to ensure the footer is at the edge */
+html, body {
+    height: 100%;
+}
+/* Add padding to the body bottom so content doesn't get covered by the fixed footer */
+body {
+    padding-bottom: 40px; 
 }
