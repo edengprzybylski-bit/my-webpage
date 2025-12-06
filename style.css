@@ -1,0 +1,62 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(253, 74%, 44%);
+}
+
+/* Banner */
+.banner {
+    background-color: #4CAF50;
+    color: rgb(96, 20, 20);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Layout Container */
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    flex: 1;
+    background-color: #871515;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Main Content */
+main {
+    flex: 2;
+    background-color: rgb(89, 13, 151);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    flex: 1;
+    background-color: #7c1540;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.right-sidebar img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: rgb(4, 4, 4);
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
